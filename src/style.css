@@ -1,29 +1,104 @@
+:root {
+    --header-height: 80px;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
 /* Основные стили */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 100%;
+    box-sizing: border-box;
 }
+.background-video {
+     position: static;
+     top: 50%;
+     left: 50%;
+     min-width: 100%;
+     min-height: 100%;
+     width: "1920";
+     height: "1024";
+     z-index: -1; /* Помещаем видео за контентом */
+}
+.content {
+     position: relative;
+     z-index: 1; /* Контент будет поверх видео */
+     color: white; /* Цвет текста для контраста */
+     text-align: center;
+     padding: 20px;
+     }
 
+table {
+    width: 650px;
+    border-top: 7px solid rgb(98, 59, 5);
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+  }
+  
+  thead {
+    text-align: center;
+      padding: 10px;
+      border: 3px solid rgb(98, 59, 5);
+      background-color: #966d6d;
+  }
+   tbody {
+    text-align: center;
+    padding: 10px;
+      border: 3px solid rgb(98, 59, 5);
+   }
+   .table-element:nth-child(odd) {
+    background: #6e3838;
+}
+  
 h1, h2, h3 {
     margin: 0;
     padding: 0;
 }
 
-/* Шапка и навигация */
-header {
+.container {
+    max-width: 70rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+
+
+.header {
     background-color: #966d6d;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     z-index: 1000;
 }
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-height);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Добавляет промежутки между пунктами меню */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+
 
 .menu-toggle {
     display: none;
@@ -51,8 +126,8 @@ nav a {
     text-decoration: none;
 }
 
-/* Адаптивные стили для меню на маленьких экранах */
-@media screen and (max-width: 420px) {
+
+@media screen and (max-width: 1020px) {
     .menu-toggle {
         display: block;
     }
@@ -73,7 +148,7 @@ nav a {
 }
 
 /* Контент и секции */
-#hero {
+/* #hero {
     background: url('path/to/your/image.jpg') no-repeat center center/cover;
     height: 400px;
     display: flex;
@@ -87,6 +162,32 @@ nav a {
 section {
     padding: 20px;
     margin: 20px 0;
+} */
+.section {
+    position: relative;
+    color: #f9f9f9;
+}
+.section--hero {
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    min-height: calc(100dvh - var(--header-height));
+    margin-block-start: var(--header-height);
+    padding-block: 10rem;
+}
+.section__container {}
+.section__title {}
+.section__button {}
+.section__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+.section__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Галерея */
@@ -173,7 +274,6 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
     max-width: 500px;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 20px;
@@ -206,24 +306,57 @@ nav a.active {
 nav a.hover {
     color: #ffa500; /* Цвет при наведении */
 }
+#main-nav a.active {
+    color: #f00; /* Example color for the active menu item */
+    font-weight: bold;
+}
+#main-nav a:hover {
+    color: #333; /* Example color for hover */
+    text-decoration: underline;
+}
+.schedule-container {
+    margin-top: 20px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.schedule-table tr:first-child td {
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+.schedule-table td[colspan] {
+    font-weight: bold;
+    background-color: #e0e0e0;
+}
+
 
 /* Фиксированная структура для футера */
 html, body {
-    height: 100%;
+    /* height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
     margin: 0;
 }
 
 body {
-    flex: 1 0 auto;
+    /* flex: 1 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 main {
-    flex: 1 0 auto;
-    padding-top: 80px; /* Отступ для фиксированного хедера */
+    /* flex: 1 0 auto; */
+    /* padding-top: 80px; */
 }
 
 /* Футер всегда внизу */
@@ -237,21 +370,6 @@ footer {
     position: relative;
 }
 
-
-/* Шапка */
-header {
-    background-color: #966d6d;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 60px; /* Высота хедера */
-}
 
 /* Отступы для активного меню и навигации */
 nav ul {
@@ -284,35 +402,22 @@ nav a.hover {
 }
 /* Основная структура */
 html, body {
-    margin: 0;
+    /* margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100%; */
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 main {
-    flex-grow: 1;
-    padding-top: 80px; /* Отступ для фиксированного хедера */
-    min-height: calc(100vh - 60px - 40px); /* Высота экрана минус хедер и футер */
-}
-
-/* Хедер */
-header {
-    background-color: #966d6d;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 60px; /* Высота хедера */
+    /* flex-grow: 1; */
+    /* Отступ для фиксированного хедера */
+    /* padding-top: 80px;  */
+    /* Высота экрана минус хедер и футер */
+    /* min-height: calc(100vh - 60px - 40px);  */
 }
 
 /* Стандартное меню */

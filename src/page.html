@@ -1,110 +1,163 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
     <title>Талион Империал</title>
     <link rel="stylesheet" href="style.css">
     <script src="scripts/pageLoadTime.js" defer></script>
     <script src="scripts/menuHighlight.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<header>
-    <div class="logo">
-        <a href="page.html"><h1>Талион Империал</h1></a>
+
+    <header class="header">
+        <div class="header__container container">
+
+            <div class="logo">
+                <a href="page.html">
+                    <h1>Талион Империал</h1>
+                </a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="about.html">О нас</a></li>
+                   <li><a href="rooms.html">Номера</a></li>
+                   <li><a href="constructor.html">Досуг</a></li>
+                   <li><a href="services.html">Услуги</a></li>
+                   <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="section section--hero">
+
+            <div class="section__container container">
+                 <h2 class="section__title">Добро пожаловать в Талион Империал</h2>
+                 <p>Люкс-отель в сердце города.</p>
+                 <button class="section__button button">Забронировать номер</button>
+               
+
+            </div>
+
+            <div class="section__media">
+                <video class="section__video video" autoplay loop muted preload="metadata" src="vid.mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+
+        </section>
+
+        <section id="about">
+            <h2>О нас</h2>
+            <p>«Талион Империал Отель» — это уникальный исторический отель, расположенный в знаменитом дворце Елисеевых в самом сердце Санкт-Петербурга - на пересечении Невского проспекта и набережной реки Мойки.</p>
+        </section>
+
+        <section id="rooms">
+            <h2>Номера</h2>
+            <div class="room">
+                <h3>Люкс</h3>
+                <p>Номер комфорт класса с двумя спальнями</p>
+            </div>
+            <div class="room">
+                <h3>Стандарт</h3>
+                <p>Номер с двухместной кроватью и всеми удобствами</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Услуги</h2>
+            <ul>
+                <li>Спа</li>
+                <li>Ресторан</li>
+                <li>Бассейн</li>
+            </ul>
+            <table>
+                <caption>Аренда залов</caption>
+                <thead>
+                    <tr>
+                        <th>Название зала</th>
+                        <th>Количество мест</th>
+                        <th>Сумма</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Империал</td>
+                        <td>350 </td>
+                        <td>100 000</td>
+                    </tr>
+                    <tr>
+                        <td>Баккара</td>
+                        <td>30</td>
+                        <td>50 000</td>
+                    </tr>
+                    <tr>
+                        <td>Ореховая гостинная</td>
+                        <td>30</td>
+                        <td>45 000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="gallery">
+            <h2>Галерея</h2>
+            <div class="gallery-grid">
+                <img src="image1.jpg" alt="Номер Люкс">
+                <img src="image2.jpg" alt="Номер Стандарт">
+                <img src="image3.jpg" alt="Ресторан">
+                <img src="image4.jpg" alt="Спа">
+            </div>
+        </section>
+
+        <section id="loyalty-benefits">
+            <div class="loyalty-header">
+                <h2>Преимущества программы лояльности</h2>
+            </div>
+            <div class="loyalty-grid">
+                <div class="loyalty-item">
+                    <p><strong>Скидка 7%</strong> от тарифа Лучшая цена дня при накоплении 15 ночей проживания</p>
+                </div>
+                <div class="loyalty-item">
+                    <p><strong>Скидка 13%</strong> от тарифа Лучшая цена дня при накоплении 25 ночей проживания</p>
+                </div>
+                <div class="loyalty-item">
+                    <p><strong>Скидка 22%</strong> от тарифа Лучшая цена дня при накоплении 55 ночей проживания</p>
+                </div>
+                <div class="loyalty-item">
+                    <p><strong>Скидка 25%</strong> от тарифа Лучшая цена дня, бесплатное повышение категории номера и завтраки в подарок при накоплении 75 ночей проживания</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="ad-banner">
+            <p>Рекламный баннер</p>
+        </div>
+        <p>© 2023 Талион Империал. Все права защищены.</p>
+    </footer>
+
+    <!-- Модальное окно для бронирования -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Форма бронирования</h2>
+            <p>Заполните форму, чтобы забронировать номер.</p>
+        </div>
     </div>
-    <nav id="main-nav">
-        <ul>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="rooms.html">Номера</a></li>
-            <li><a href="services.html">Услуги</a></li>
-            <li><a href="contact.html">Контакты</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main>
-    <section id="hero">
-        
-           <img src="vid.mp4">
-        <h2>Добро пожаловать в Талион Империал</h2>
-        <p>Люкс-отель в сердце города.</p>
-        <button id="bookButton">Забронировать номер</button>
-    </section>
-
-    <section id="about">
-        <h2>О нас</h2>
-        <p>«Талион Империал Отель» — это уникальный исторический отель, расположенный в знаменитом дворце Елисеевых в самом сердце Санкт-Петербурга - на пересечении Невского проспекта и набережной реки Мойки.</p>
-    </section>
-
-    <section id="rooms">
-        <h2>Номера</h2>
-        <div class="room">
-            <h3>Люкс</h3>
-            <p>Номер комфорт класса с двумя спальнями</p>
-        </div>
-        <div class="room">
-            <h3>Стандарт</h3>
-            <p>Номер с двухместной кроватью и всеми удобствами</p>
-        </div>
-    </section>
-
-    <section id="services">
-        <h2>Услуги</h2>
-        <ul>
-            <li>Спа</li>
-            <li>Ресторан</li>
-            <li>Бассейн</li>
-        </ul>
-    </section>
-
-    <section id="gallery">
-        <h2>Галерея</h2>
-        <div class="gallery-grid">
-            <img src="image1.jpg" alt="Номер Люкс">
-            <img src="image2.jpg" alt="Номер Стандарт">
-            <img src="image3.jpg" alt="Ресторан">
-            <img src="image4.jpg" alt="Спа">
-        </div>
-    </section>
-
-    <section id="loyalty-benefits">
-        <div class="loyalty-header">
-            <h2>Преимущества программы лояльности</h2>
-        </div>
-        <div class="loyalty-grid">
-            <div class="loyalty-item">
-                <p><strong>Скидка 7%</strong> от тарифа Лучшая цена дня при накоплении 15 ночей проживания</p>
-            </div>
-            <div class="loyalty-item">
-                <p><strong>Скидка 13%</strong> от тарифа Лучшая цена дня при накоплении 25 ночей проживания</p>
-            </div>
-            <div class="loyalty-item">
-                <p><strong>Скидка 22%</strong> от тарифа Лучшая цена дня при накоплении 55 ночей проживания</p>
-            </div>
-            <div class="loyalty-item">
-                <p><strong>Скидка 25%</strong> от тарифа Лучшая цена дня, бесплатное повышение категории номера и завтраки в подарок при накоплении 75 ночей проживания</p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <div class="ad-banner">
-        <p>Рекламный баннер</p>
-    </div>
-    <p>© 2023 Талион Империал. Все права защищены.</p>
-</footer>
-
-<!-- Модальное окно для бронирования -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Форма бронирования</h2>
-        <p>Заполните форму, чтобы забронировать номер.</p>
-    </div>
-</div>
-
-<script src="scripts/button.js"></script>
+    <script src="scripts/button.js"></script>
 </body>
+
 </html>
