@@ -57,17 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
             dayCell.textContent = day;
             row.appendChild(dayCell);
 
-            // Массив времени суток, чтобы случайно пропускать одно время, если выбрано меньше 4 мероприятий
-            const availableTimes = [...timesOfDay];
-            if (maxEventsPerDay < 4) {
-                const randomIndex = Math.floor(Math.random() * availableTimes.length);
-                availableTimes.splice(randomIndex, 1); // Убираем одно случайное время суток
-            }
+            // Генерируем случайный набор индексов для заполнения времен суток
+            const shuffledTimes = [...timesOfDay]
+                .sort(() => Math.random() - 0.5) // Перемешиваем массив
+                .slice(0, maxEventsPerDay); // Берём нужное количество времен суток
 
             timesOfDay.forEach(time => {
                 const eventCell = document.createElement('td');
-                if (availableTimes.includes(time)) {
-                    // Выбираем случайное мероприятие из выбранных
+                if (shuffledTimes.includes(time)) {
+                    // Выбираем случайное мероприятие
                     const randomEvent = selectedLeisure[Math.floor(Math.random() * selectedLeisure.length)];
                     eventCell.textContent = eventNames[randomEvent];
                 }

@@ -12,6 +12,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     max-width: 100%;
     box-sizing: border-box;
+    
 }
 .background-video {
      position: static;
@@ -27,7 +28,7 @@ body {
      position: relative;
      z-index: 1; /* Контент будет поверх видео */
      color: white; /* Цвет текста для контраста */
-     text-align: center;
+     text-align: justify;
      padding: 20px;
      }
 
@@ -35,11 +36,26 @@ table {
     width: 650px;
     border-top: 7px solid rgb(98, 59, 5);
     border-collapse: collapse;
-    text-align: center;
+    text-align: justify;
     margin-bottom: 20px;
     border: 1px solid #dddddd;
   }
   
+  .item {
+    /* Стили для обычного состояния элемента */
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+  }
+  
+  .item.hover {
+    /* Стили для состояния наведения (hover) */
+    background-color: #f0f0f0;
+    border: 1px solid #aaa;
+    cursor: pointer; /* Меняем курсор на "указатель" */
+  }
+
   thead {
     text-align: center;
       padding: 10px;
@@ -53,6 +69,29 @@ table {
    }
    .table-element:nth-child(odd) {
     background: #6e3838;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
 }
   
 h1, h2, h3 {
@@ -437,4 +476,152 @@ footer {
     width: 100%;
     position: relative;
     height: 40px;
+}
+
+/* Стили для отзывов */
+#reviews {
+    margin: 40px auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+#reviews-container {
+    margin: 20px 0;
+}
+
+.review {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.review h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.review p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.preloader {
+    font-size: 1.2em;
+    color: #888;
+}
+
+.button {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #a30000;
+}
+/* Стили для контейнера таблицы */
+.table-container {
+    margin: 20px 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.table-caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Использование Grid для таблицы */
+.table-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 равных колонки */
+    gap: 10px; /* Отступы между ячейками */
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Стили для заголовков */
+.table-header {
+    background-color: #8b0000; /* Темно-красный фон */
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Стили для строк таблицы */
+.table-row {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+/* Чётные и нечётные строки */
+.table-row:nth-child(odd) {
+    background-color: #f9f9f9; /* Светло-серый фон */
+}
+
+.table-row:nth-child(even) {
+    background-color: #fff; /* Белый фон */
+}
+
+/* Hover эффект */
+.table-row:hover {
+    background-color: #f2f2f2;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .table-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+    }
+    .table-header {
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+/* Общие стили для навигации */
+#main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#main-nav li {
+    margin: 0 15px;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Эффект наведения */
+#main-nav a:hover {
+    background-color: #f2f2f2;
+    color: #8b0000; /* Цвет при наведении */
+}
+
+/* Стили для активного пункта меню */
+.about-page #main-nav a[href="about.html"],
+.rooms-page #main-nav a[href="rooms.html"],
+.constructor-page #main-nav a[href="constructor.html"],
+.services-page #main-nav a[href="services.html"],
+.contact-page #main-nav a[href="contact.html"] {
+    background-color: #8b0000; /* Активный фон */
+    color: #fff; /* Цвет текста */
+    font-weight: bold;
 }
