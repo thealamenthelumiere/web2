@@ -12,7 +12,11 @@
     <script src="scripts/pageLoadTime.js" defer></script>
     <script src="scripts/menuHighlight.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="scripts/gallerySlider.js"></script>
 
 <body>
 
@@ -76,6 +80,21 @@
                 <h3>Стандарт</h3>
                 <p>Номер с двухместной кроватью и всеми удобствами</p>
             </div>
+            </div>
+        </section>
+        <section id="gallery">
+            <div class="container">
+                <h2>Галерея отеля</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/gallery1.jpg" alt="Галерея 1"></div>
+                        <div class="swiper-slide"><img src="images/gallery2.jpg" alt="Галерея 2"></div>
+                        <div class="swiper-slide"><img src="images/gallery3.jpg" alt="Галерея 3"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
         </section>
 
